@@ -1,0 +1,1 @@
+const state={claims:[],audit:[],connections:[]};export function audit(event,detail={}){state.audit.unshift({at:new Date().toISOString(),event,detail});state.audit=state.audit.slice(0,500)}export function addClaim(c){state.claims.unshift(c);return c}export function snapshot(){return JSON.parse(JSON.stringify(state))}
